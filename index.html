@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareCONNECT</title>
+  <link rel="icon" href="">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="manifest.json">
+  
+  <link rel="apple-touch-icon" href="" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" text="text/CSS"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" text="text/CSS"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+  html {
+    scroll-behavior: smooth;
+    
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .back-top-wrap {
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    background-color: #80F7D1;
+    padding: 1rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    z-index: 100;
+  }
+
+  .back-top-wrap:hover {
+    background-color: #00a2ff;
+    color: #80F7D1;
+  }
+
+  .back-top-wrap:hover .fas.fa-arrow-up {
+    color: white;
+  }
+
+  .fas.fa-arrow-up {
+    color: #00488F;
+    transition: 0.3s ease-in-out;
+  }
+  
+</style>
+
+<body onload="myFunction()">
+  <div class="loading-wrapper">
+    <img src="./care.png" id="loading" />
+  </div>
+
+  <!-- Back to top button -->
+  <div id="back-top-div" class="back-top-wrap">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <header>
+    <nav class="nav" id="nav">
+      <div>
+        <a class="navbar-brand" href="#!"> <img src="care.png" alt="Logo" class="logo" /></a>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <ul class="links" id="navmenu">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#services">SERVICES </a></li>
+          <li><a href="html/contact.html">CONTACT US </a></li>
+        </ul>
+      </div>
+      <button class="login-button"><a href="html/login.html">SignUp / Login</a></button>
+      <div class="hamburger" id="ham">
+        <i class="cancel fa-solid fa-xmark"></i>
+
+        <svg class="burger" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z">
+          </path>
+        </svg>
+      </div>
+    </nav>
+    <div class="menu" id="menu">
+      <ul class="menu-link">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES </a></li>
+        <li><a href="html/contact.html">CONTACT US </a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Welcome to CareCONNECT !!</h1>
+      <div class="container">
+        <h3><span class="auto-type" style="font-size: 40px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"></a></span></h3>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+        var typed = new Typed(".auto-type", {
+          strings: ["     Guidance in every moment of urgency  - MOMCARE HARMONY !!    "],
+          typeSpeed: 50,
+          backspeed: 50,
+          loop: true
+        })
+        
+      </script>
+      <a href="#services" class="rainbow-button" alt="Explore"></a>
+    </div>
+
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h1 data-aos="flip-right">About Us</h1>
+    <div class="max-width">
+      <div data-aos="zoom-in" class="photo"><img src="./images/abt.jpg" height="300px" width="330px"></div>
+      <div class="about-content">
+        <p data-aos="fade-left" class="text-1"> Welcome to CareCONNECT, your go-to app for navigating critical moments in pregnancy. Our emergency app is designed to empower you with information, support, and resources precisely when you need them the most.
+          It uses your personal information to guide you the best at the time of emergency, using the alert features we can send an important info alert to the nearby emergency services as quickly as possible and avoid delay.  </p>
+          <!-- <span>one step solution</span> to get relief from stress. </p>
+        <p data-aos="fade-left" class="text-3">We hope that everyone can live a <span>stress free life </span>with the
+          help of<span> sukoon.</span> -->
+      </div>
+    </div>
+    <h3><span style="color: rgb(91, 134, 150);">MEET OUR MEMBERS</span></h3>
+
+    <div class="box">
+
+      <!--         <div class="card">
+          <img src="./images/shayan.jpeg" alt="shayan" loading="lazy">
+          <h5>Shayan Pal</h5>
+          <div class="pra">
+            <p>Member</p>
+            <a href="https://bio.link/shayanpal"><button>Let's Connect</button></a>
+          </div>
+        </div> -->
+      <div data-aos="fade-up" ddata-aos-duration="800" class="card">
+        <img src="rohit.jpeg" alt="rohit" loading="lazy">
+        <h5>Rohit Sharma</h5>
+        <div class="pra">
+          <p>Team Lead</p>
+          <a href="https://www.linkedin.com/in/rohit-sharma-817041258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><button>Let's Connect</button></a>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="800" class="card">
+        <img src="ritika.jpeg" alt="ritika " loading="lazy">
+        <h5>Ritika Budhiraja</h5>
+        
+        <div class="pra">
+          <p class="p">Member</p>
+         
+          <a href="https://www.linkedin.com/in/ritika-budhiraja"><button>Let's Connect</button></a>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="800" class="card">
+        <img src="utkarsh.jpeg" alt="Utkarsh" loading="lazy">
+        <h5>Kumar Utkarsh</h5>
+        <div class="pra">
+          <p class="p">Member</p>
+          <a href="https://www.linkedin.com/in/kumar-utkarsh-515196260"><button class="he">Let's Connect</button></a>
+        </div>
+
+      </div>
+
+
+      
+
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services">
+    <h1>Our Services</h1>
+    <div data-aos="zoom-in" data-aos-duration="800" class="container">
+      <div class="responsive audio">
+        <div class="round-image">
+          <img src="medicine.jpg" alt="audio" loading="lazy" />
+        </div>
+        <div class="description">
+          <h2>ORDER NOW</h2>
+          <p>
+            "Secure your contraceptive products & medical-aid conveniently by placing an order at your nearby store or through the available vending machine options."
+          </p>
+          <a href="https://www.1mg.com/">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="800" class="responsive reading">
+        <div class="round-image">
+          <img src="relaxing.jpg" alt="read" loading="lazy" />
+        </div>
+        <div class="description">
+          <h2>Pregnancy-Test Guidance</h2>
+          <p>
+           " Get step-by-step guidance on how to take a pregnancy-test at your doorstep and what precautions to follow during maternity period"
+          </p>
+          <a href="">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="800" class="responsive yoga">
+        <div class="round-image">
+          <img src="hospital.jpg" alt="yoga" loading="lazy" />
+        </div>
+        <div class="description">
+          <h2>Connect-your Nearby Specialist</h2>
+          <p>
+            "CareCONNECT utilizes  your location to instantly alert nearby clinics, hospitals, and healthcare providers specializing in reproductive health during emergencies. Ensure you have access to professional support in your vicinity
+            "
+          </p>
+          <a href="https://www.practo.com/counselling-psychology">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="800" class="responsive laugh">
+        <div class="round-image">
+          <img src="alert.jpg" alt="laughing" />
+        </div>
+        <div class="description">
+          <h2>ALERT !!</h2>
+          <p>
+           "By clicking this button you will be reached by the nearby profesionals for emergency assistance as soon as possible. Be careful it is an emergency condition !" 
+          </p>
+          <script type="text/javascript">
+            (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() {
+                  window.voiceflow.chat.load({
+                    verify: { projectID: '65c1a968a2c8db2594345237' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                  });
+                }
+                v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            })(document, 'script');
+          </script>
+          <a href="map.html">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="800" class="responsive talk">
+        <div class="round-image">
+          <img src="cycle.jpg" loading="lazy" alt="talking" />
+        </div>
+        <div class="description">
+          <h2>Cycle Tracking Calendar</h2>
+          <p>
+          "Use our built-in calendar to track menstrual cycles, ovulation, and fertility windows. Plan ahead and stay informed about your reproductive health"
+          </p>
+          <a href="calender.html">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div data-aos="zoom-in" data-aos-duration="800" class="responsive doctor">
+        <div class="round-image">
+          <img src="physically abled.png" alt="doctor" loading="lazy" />
+        </div>
+        <div class="description">
+          <h2>Special-Care for Differently -abled baby infants</h2>
+          <p>
+            "Providing tailored nurturing for differently-abled baby infants, our special-care program offers dedicated support, personalized attention, and a compassionate environment to ensure their unique needs are met with utmost sensitivity and expertise."
+          </p>
+          <a href="html/talkingTherapy.html " target="_blank">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div class="responsive child">
+        <div class="round-image">
+          <img src="birth.png" alt="child" loading="lazy" />
+        </div>
+        <div class="description">
+          <h2>Apply for Birth Certificates</h2>
+          <p>
+            "Streamline the process of obtaining your child's official documents with our Birth Certificate application service – a one-step solution for hassle-free and efficient documentation."
+          </p>
+          <a href="https://services.india.gov.in/service/detail/birth-certificate-1">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div class="responsive child">
+        <div class="round-image">
+          <img src=".\images/audio.png" alt="child" loading="lazy" />
+        </div>
+        <div class="description">
+          <h2>Audio Therapy  for Mind Relaxation </h2>
+          <p>
+            "Listening to music & other audio files often enlightens our mood."
+          </p>
+          <a href="./html/audioTherapy.html">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      <div class="responsive child">
+        <div class="round-image">
+          <img src="./images/reading.png" alt="child" loading="lazy" />
+        </div>
+        <div class="description">
+          <h2>Reading Therapy </h2>
+          <p>
+            "Motivational quotes and books can help us to divert and change our mood."
+          </p>
+          <a href="./html/readingTherapy.html">
+            Let's Explore
+          </a>
+        </div>
+      </div>
+      
+      
+      
+  </section>
+
+  
+  <!-- <style>
+    /* Style for the button */
+    .custom-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db; /* Blue background color */
+      color: #fff; /* White text color */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Hover effect for the button */
+    .custom-button:hover {
+      background-color: #8e44ad; /* Blood red hover color */
+    }
+
+    /* Style for the alert icon */
+    .alert-icon {
+      position: absolute;
+      top: 90%;
+      left: 90px;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      background-color: #c0392b; /* Blood red color for the icon */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+-->
+  <!-- Button with alert icon -->
+  <!--
+  <button class="custom-button" onclick="showAlert()">
+    <div class="alert-icon">!</div>
+    Click me!!
+  </button>
+
+  <script>
+    function showAlert() {
+      alert("Alert! This is a sample alert.");
+      // Open a new web page (you can replace 'https://example.com' with the desired URL)
+      window.open('https://example.com', '_blank');
+    }
+  </script>
+-->
+
+
+  <!-- Testimonials Section -->
+  <!-- Testimonials Section -->
+  <!-- <section id="testimonial" class="section-100">
+    <div class="testimonials_heading">
+      <h1>Testimonials</h1>
+    </div>
+    <div class="testimonial-view">
+      <div class="owl-carousel">
+        <div class="testimonial-box">
+
+          <figure class="testimonal-Card">
+            <blockquote> I've explored all therapy pages, but my fav one was audio therapy. It have different calming &
+              mood soothing sounds, there are also many podcasts as well. Sukoon website really helped me to get relief
+              from my stress.
+              <div class="arrow"></div>
+            </blockquote>
+            <img src="./images/Mohit.jpg" alt="sample3" />
+            <div class="author">
+              <h5>Mohit Namdev</h5>
+            </div>
+        </div>
+        <div class="testimonial-box"> -->
+          <!-- <i class="fa fa-quote-left quote-icon"></i> -->
+          <!-- <figure class="testimonal-Card hover">
+            <blockquote> I'm really loving the laughing therapy and reading therapy pages. The standup videos present in
+              the laughing therapy page cheer me up, and the quotes present in the reading therapy page are really
+              motivating. <div class="arrow"></div>
+            </blockquote>
+            <img src="./images/vanshita.jpg" alt="sample47" />
+            <div class="author">
+              <h5>Vanshita Mathur</h5>
+            </div>
+          </figure>
+        </div>
+        <div class="testimonial-box">   
+        -->
+          <!-- <i class="fa fa-quote-left quote-icon"></i> -->
+          <!--
+            <figure class="testimonal-Card">
+            <blockquote>As a student, I love using this website, sukoon is like having a personal therapist. Features
+              and UI of the website is amazing and it really helped me to manage a lot of my anxiety and stress. I also
+              feel much supported by the lines of quotes than a human.
+              <div class="arrow"></div>
+            </blockquote>
+            <img src="./images/Shravani Kaware.jpg" alt="sample17" />
+            <div class="author">
+              <h5>Shravani Kaware</h5>
+            </div>
+          </figure>
+
+        </div>
+        <div class="testimonial-box">
+        -->
+          <!-- <i class="fa fa-quote-left quote-icon"></i> -->
+         <!--  <figure class="testimonal-Card">
+            <blockquote>I'm really liking Audio, Reading and Yoga therapy because it's helpful for me during studying
+              time and last but not least Laughing therapy is also my favorite because whenever I am feeling lonely at
+              that time I am watching my childhoods cartoon show like Mr. bean and also watching memes.
+              <div class="arrow"></div>
+            </blockquote>
+            <img src="./images/Kelvin Parmar.jpg" alt="sample17" />
+            <div class="author">
+              <h5>Kelvin Parmar</h5>
+            </div>
+          </figure>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+ -->
+
+  
+  <!-- Faq section -->
+  <section class="faq">
+    <div class="faq_heading">
+      <h1>Frequently Asked Questions</h1>
+    </div>
+    <div class="accordion">
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>Who are we and what do we do?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>We are a team of open source contributors who have created this website "CareCONNECT"
+            with the aim
+            to provide a one step solution to get relief from ALL the Hustle. We hope that everyone can live a
+            stress free life with the help of sukoon.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What are the services we offer?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>We offer multiple services like:
+            <br>
+            1. Audio Therapy
+            <br>
+            2. Reading Therapy
+            <br>
+            
+            <br>
+            
+            <br>
+           
+            <br>
+            
+            <br>
+           
+            <br>
+            
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>How can you Contact Us?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p> You can contact us via <a class="email" href="mailto:sukoon665@gmail.com">CareCONNECT28@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Reading Therapy?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Reading therapy is a creative art therapy that uses literature to support good
+            mental health and is a versatile and cost-effective treatment. It includes storytelling or the reading of
+            specific texts.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Audio Therapy?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Audio Therapy includes auditory and vibratory inputs which are used to influence a person's psychological
+            state, includes sound healing, vibroacoustic sound therapy, music, and music therapy.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Yoga Therapy?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Yoga therapy uses yoga postures, breathing exercises, meditation, and guided imagery to improve mental and
+            physical health.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Laughing Therapy?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Laughing therapy uses humor to help relieve pain and stress and improve a person's sense of well-being
+            through jokes and playful exercises that encourage hearty, continuous, and lively laughter.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Talking Therapy?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Talking therapy involves talking to someone to help deal with negative feelings or other mental health
+            problems. It helps shy individuals open up their problems to others so that they can help them overcome
+            them.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Child Therapy?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Child therapy includes the watching of cute videos and images of children, as children make us
+            forget about our problems with their innocence and cuteness.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__btn">
+
+          <span class="accordion__caption"><i class="far fa-lightbulb"></i>What is Spritual Therapy?</span>
+          <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+        </button>
+
+        <div class="accordion__content">
+          <p>Spiritual therapy is a form of counseling that attempts to treat a person's soul as well as mind and body
+            by accessing individual belief systems and using
+            that faith in a higher power to explore areas of conflict in life.</p>
+        </div>
+      </div>
+    </div>
+    </div> -->
+  </section>
+
+  <!-- footer start -->
+  <footer>
+    <div class="footer-container">
+      <!--logo and info column-->
+      <div class="col">
+        <!--logo insert-->
+        <img src="care.png" alt="logo" class="footlogo" />
+        <div class="footercontent">
+          <h2 class="footerheading">CareCONNECT</h2>
+          <p class="footerpara">MOMCARE HARMONY !!</p>
+        </div>
+      </div>
+
+      <!--ADDRESS COLUMN-->
+
+      <div class="footer-side-col">
+        <div class="col">
+          <h3>
+            ADDRESS
+            <div class="underline"><span></span></div>
+          </h3>
+          <p> India</p>
+          <p class="email-id"><a href="">CareCONNECT28S@gmail.com</a></p>
+        </div>
+        <!--HOME COLUMN-->
+        <div class="col">
+          <h3>HOME</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li>
+              <a href="https://github.com/Susmita-Dey/Sukoon/blob/main/CODE_OF_CONDUCT.md">Code Of Conduct</a>
+            </li>
+            <li>
+              <a href="https://github.com/Susmita-Dey/Sukoon">Contribute</a>
+            </li>
+            <li>
+              <a href="https://www.buymeacoffee.com/susmitadey">Donate</a>
+            </li>
+          </ul>
+        </div>
+        <!--OUR SERVICES COLUMN-->
+       <!-- <div class="col">
+          <h3>
+            SERVICES
+            <div class="underline"><span></span></div>
+          </h3>
+          <ul>
+            <li>
+              <a href="https://sukoon-stress-free.netlify.app/html/audiotherapy">Audio Therapy</a>
+            </li>
+            <li>
+              <a href="https://sukoon-stress-free.netlify.app/html/readingtherapy">Reading Therapy</a>
+            </li>
+            <li>
+              <a href="https://sukoon-stress-free.netlify.app/html/yogatherapy.html">Yoga Therapy</a>
+            </li>
+            <li>
+              <a href="https://sukoon-stress-free.netlify.app/html/laughTherapy.html">Laughing Therapy</a>
+            </li>
+            <li>
+              <a href="https://sukoon-stress-free.netlify.app/html/talkingtherapy">Talking Therapy</a>
+            </li>
+            <li>
+              <a href="https://www.practo.com/counselling-psychology">Consult a Doctor</a>
+            </li>
+            <li>
+              <a href="https://sukoon-stress-free.netlify.app/html/childTherapy">Child Therapy</a>
+            </li>
+            <li>
+              <a href="https://sukoon-stress-free.netlify.app/html/spirituality">Spiritual Therapy</a>
+            </li>
+            <li>
+              <a href="https://sukoon-stress-free.netlify.app/html/specialTherapy">Special Therapy</a>
+            </li>
+          </ul>
+        </div>
+      -->
+        <!--CONTACTS COLUMN-->
+        <div class="col">
+          <h3>
+            CONTACTS
+            <div class="underline"><span></span></div>
+          </h3>
+          <div class="social-menu">
+            <ul>
+              <a href="" target="_blank">
+                <li id="social-twitter"><i class="fab fa-2x fa-twitter"></i></li>
+              </a>
+              <a href="" target="_blank">
+                <li id="social-github"><i class="fab fa-2x fa-github"></i></li>
+              </a>
+              <a href="" target="_blank">
+                <li id="social-linkedin"><i class="fab fa-2x fa-linkedin-in"></i></li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+    let preloader = document.querySelector(".loading-wrapper");
+    function myFunction() {
+      preloader.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    let navbar = document.querySelector("#nav");
+    let navmenu = document.querySelector("#navmenu");
+
+    window.onscroll = function () {
+      if (window.pageYOffset >= navmenu.offsetTop) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    };
+
+    window.onscroll = () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('nav-active');
+      } else {
+        navbar.classList.remove('nav-active');
+      }
+    };
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./serviceworker.js')
+          .then((reg) => console.log('Success', reg.scope))
+          .catch((err) => console.log('Error', err))
+      })
+    }
+  </script>
+  <script src="js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

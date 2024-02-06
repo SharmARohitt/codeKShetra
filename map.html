@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Warning Alert Notification</title>
+      <link rel="stylesheet" href="maps.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   </head>
+   <body>
+      <button id="alertButton">Alert</button>
+      <div class="alert hide">
+         <span class="fas fa-exclamation-circle"></span>
+         <span class="msg">Your location is being tracked!</span>
+         <div class="close-btn">
+            <span class="fas fa-times"></span>
+         </div>
+      </div>
+      <script>
+         $('#alertButton').click(function(){
+           if (navigator.geolocation) {
+             navigator.geolocation.getCurrentPosition(showPosition, handleError);
+           } else {
+             alert("Geolocation is not supported by this browser.");
+           }
+           $('.alert').addClass("show");
+           $('.alert').removeClass("hide");
+           $('.alert').addClass("showAlert");
+           setTimeout(function(){
+             $('.alert').removeClass("show");
+             $('.alert').addClass("hide");
+           },5000);
+         });
+
+         function showPosition(position) {
+           var latitude = position.coords.latitude;
+           var longitude = position.coords.longitude;
+           alert("Your location is: " + latitude + ", " + longitude);
+           // You can send this location data to your server for tracking purposes.
+         }
+
+         function handleError(error) {
+           console.error("Error getting geolocation:", error.message);
+           // Handle errors here, e.g., display a message to the user.
+         }
+
+         $('.close-btn').click(function(){
+           $('.alert').removeClass("show");
+           $('.alert').addClass("hide");
+         });
+      </script>
+   </body>
+</html>

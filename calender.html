@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Calendar with Reminders</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calendar-container {
+      max-width: 600px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .calendar-header {
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #current-month-year {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    #current-day {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      position: relative;
+      cursor: pointer;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .event-container {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .event-input {
+      margin-right: 10px;
+      padding: 8px;
+      font-size: 1em;
+    }
+
+    .add-event-btn {
+      margin-top: 10px;
+      padding: 8px;
+      font-size: 1em;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .add-event-btn:hover {
+      background-color: #45a049;
+    }
+
+    .event {
+      background-color: #3498db;
+      color: #fff;
+      padding: 5px;
+      margin-top: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .event:hover {
+      background-color: #2980b9;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .close-modal-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .alarm-input {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calendar-container">
+  <div class="calendar-header">
+    <h2 id="current-month-year"></h2>
+    <p id="current-day"></p>
+  </div>
+
+  <table id="calendar">
+    <!-- Calendar content will be generated here -->
+  </table>
+
+  <div class="event-container">
+    <button onclick="openModal()" class="add-event-btn">Add Event</button>
+  </div>
+</div>
+
+<div id="eventModal" class="modal">
+  <span class="close-modal-btn" onclick="closeModal()">&times;</span>
+  <h2>Add Event</h2>
+  <label for="event-input">Event:</label>
+  <input type="text" id="event-input" class="event-input">
+  <label for="date-input">Date:</label>
+  <input type="date" id="date-input" class="event-input">
+  <label for="alarm-input" class="alarm-input">Set Alarm (minutes before):</label>
+  <input type="number" id="alarm-input" class="event-input" min="0">
+  <button onclick="addEvent()" class="add-event-btn">Save Event</button>
+</div>
+
+<script>
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth();
+  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+  // Generate initial calendar
+  generateCalendar(currentYear, currentMonth);
+  updateHeader();
+
+  function generateCalendar(year, month) {
+    const calendar = document.getElementById('calendar');
+    calendar.innerHTML = '';
+
+    const headerRow = document.createElement('tr');
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    days.forEach(day => {
+      const th = document.createElement('th');
+      th.textContent = day;
+      headerRow.appendChild(th);
+    });
+
+    calendar.appendChild(headerRow);
+
+    for (let i = 1; i <= daysInMonth; i++) {
+      const date = new Date(year, month, i);
+      const dayOfWeek = date.getDay();
+
+      if (i === 1 || dayOfWeek === 0) {
+        // Start a new row on the first day of the month or when it's Sunday
+        const newRow = document.createElement('tr');
+        calendar.appendChild(newRow);
+      }
+
+      const cell = document.createElement('td');
+      cell.textContent = i;
+      cell.setAttribute('data-date', date.toISOString().split('T')[0]);
+      cell.onclick = () => openModal(date);
+      calendar.lastElementChild.appendChild(cell);
+    }
+  }
+
+  function updateHeader() {
+    const monthYearHeader = document.getElementById('current-month-year');
+    const dayHeader = document.getElementById('current-day');
+
+    const options = { month: 'long', year: 'numeric' };
+    monthYearHeader.textContent = currentDate.toLocaleDateString('en-US', options);
+
+    const dayOptions = { weekday: 'long' };
+    dayHeader.textContent = currentDate.toLocaleDateString('en-US', dayOptions);
+  }
+
+  function addEvent() {
+    const eventInput = document.getElementById('event-input');
+    const dateInput = document.getElementById('date-input');
+    const alarmInput = document.getElementById('alarm-input');
+
+    const eventText = eventInput.value.trim();
+    const eventDate = new Date(dateInput.value);
+    const alarmMinutes = parseInt(alarmInput.value) || 0;
+
+    if (eventText === '' || isNaN(eventDate.getTime())) {
+      alert('Please enter a valid event and date.');
+      return;
+    }
+
+    const day = eventDate.getDate();
+    const month = eventDate.getMonth();
+    const cell = document.querySelector(`#calendar td[data-date="${eventDate.toISOString().split('T')[0]}"]`);
+
+    if (cell) {
+      const eventDiv = document.createElement('div');
+      eventDiv.className = 'event';
+      eventDiv.textContent = `${eventText} (${eventDate.toLocaleDateString()})`;
+      cell.appendChild(eventDiv);
+
+      if (alarmMinutes > 0) {
+        setEventAlarm(eventDate, eventText, alarmMinutes);
+      }
+
+      // Clear input fields after adding the event
+      eventInput.value = '';
+      dateInput.value = '';
+      alarmInput.value = '';
+
+      closeModal();
+    } else {
+      alert('Invalid date. Please select a date within the current month.');
+    }
+  }
+
+  function openModal(date) {
+    const modal = document.getElementById('eventModal');
+    modal.style.display = 'block';
+
+    if (date) {
+      const dateInput = document.getElementById('date-input');
+      dateInput.value = date.toISOString().split('T')[0];
+    }
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('eventModal');
+    modal.style.display = 'none';
+  }
+
+  function setEventAlarm(eventDate, eventText, alarmMinutes) {
+    const alarmTime = new Date(eventDate.getTime() - alarmMinutes * 60000);
+
+    if (alarmTime > new Date()) {
+      setTimeout(() => {
+        alert(`Reminder: ${eventText} is starting now!`);
+      }, alarmTime - new Date());
+    }
+  }
+</script>
+
+</body>
+</html>
